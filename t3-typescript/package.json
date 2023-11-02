@@ -1,0 +1,9 @@
+{
+  "name": "t3-typescript",
+  "version": "1.0.0",
+  "main": "js/app.js",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
+}

@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap");
+
+:root {
+    --dark-gray: #1a2a32;
+    --gray: #2e4756;
+    --turquoise: #3cc4bf;
+    --yellow: #f2b147;
+    --light-gray: #d3d3d3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: "Montserrat", sans-serif;
+    border: none;
+}
+
+html, body {
+    background-color: var(--dark-gray);
+    height: 100%;
+}
+
+
+/* Shared utility classes */
+button:hover, .square:hover {
+    cursor: pointer;
+    opacity: 90%;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.yellow {
+    color: var(--yellow);
+}
+
+.turquoise {
+    color: var(--turquoise);
+}
+
+.shadow {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.border {
+    border: 1px solid rgba(211, 211, 211, 0.4) !important;
+}
+
+.centered-column-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* main styles */
+.grid {
+    padding: 50px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: 50px repeat(3, 100px) 60px;
+    gap: 12px;
+}
+
+.grid div {
+    border-radius: 7px;
+}
+
+.grid p {
+    font-size: 15px;
+}
+
+@keyframes top-panel-text-animation {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 100%;
+        transform: translateX(0);
+    }
+}
+
+@keyframes top-panel-icon-animation {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.4);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.top-panel {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: flex;
+    align-items: center;
+}
+
+.top-panel i {
+    font-size: 30px;
+    padding: 0 15px 0 5px;
+    animation: 0.6s ease-in-out top-panel-icon-animation;
+}
+
+.top-panel p {
+    font-size: 14px;
+    animation: 0.6s ease-in-out top-panel-text-animation;
+}
+
+.menu {
+    position: relative;
+}
+
+.menu button {
+    color: white;
+    background-color: #203139;
+}
+
+.menu-btn {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.menu-btn:focus,
+.menu-btn:hover {
+    background-color: rgba(211, 211, 211, 0.07);
+}
+
+.dropdown {
+    top: 55px;
+    right: 0;
+    position: absolute;
+    padding: 9px 15px;
+    background-color: #203139;
+    border-radius: 2px !important;
+}
+
+.dropdown button {
+    padding: 10px;
+}
+
+.dropdown button:hover {
+    text-decoration: underline;
+}
+
+.square {
+    background-color: var(--gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+}
+
+.score {
+    color: var(--dark-gray);
+}
+
+/* footer styles */
+footer {
+    color: white;
+}
+
+footer a {
+    color: var(--yellow);
+}
+
+footer p {
+    padding: 10px 0;
+}
+
+/* modal styles */
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal {
+    background-color: #2a4544;
+    width: 300px;
+    height: 140px;
+    border-radius: 25px;
+    gap: 20px;
+    color: white;
+}
+
+.modal button {
+    background-color: var(--turquoise);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* responsive styles */
+@media (min-width: 768px){
+    .grid {
+        padding: 25px 0;
+        grid-template-columns: repeat(3, 150px);
+        grid-template-rows: 50px repeat(3, 150px) 60px;
+        gap: 20px;
+    }
+
+    .grid div {
+        border-radius: 10px;
+    }
+}
