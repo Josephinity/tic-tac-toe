@@ -148,7 +148,7 @@ export default class View {
 
     #showModal(winner: Player | null) {
         if(winner) {
-            this.$.winner.textContent= winner.name + " wins!";
+            this.$.winner.textContent= `{winner.name} wins!`;
         } else {
             this.$.winner.textContent = "Tie!";
         }

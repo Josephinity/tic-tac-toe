@@ -1,0 +1,12 @@
+/* footer styles */
+footer {
+    color: white;
+}
+
+footer a {
+    color: var(--yellow);
+}
+
+footer p {
+    padding: 10px 0;
+}
